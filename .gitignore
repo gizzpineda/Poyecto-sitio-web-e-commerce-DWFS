@@ -2,4 +2,4 @@
 *.fig
 
 # Ignorar toda la carpeta de diseño
-diseño/
+dise*o/
