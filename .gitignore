@@ -1,0 +1,5 @@
+# Ignorar el prototipo específico
+*.fig
+
+# Ignorar toda la carpeta de diseño
+diseño/

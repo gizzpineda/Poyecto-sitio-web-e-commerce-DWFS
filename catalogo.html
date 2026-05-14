@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - CELLPOINT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="./agregarCarrito.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .font-space {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-[#F5F5F5] text-[#0F172A] p-0 md:p-1 min-h-screen flex flex-col items-center">
+
+  <!-- Contenedor Principal (Boxed Layout) -->
+  <div class="w-full max-w-[1280px] bg-white shadow-2xl overflow-hidden flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="w-full h-20 px-4 md:px-12 flex items-center justify-between bg-white sticky top-0 z-50">
+      <div class="text-2xl font-bold font-space tracking-tighter">CELLPOINT</div>
+
+      <div class="hidden md:flex items-center gap-10 text-base font-medium font-space text-[#475569]">
+        <a href="index.html" class="hover:text-[#4263B2] transition-colors">Inicio</a>
+        <a href="catalogo.html" class="text-[#4263B2] border-b-2 border-[#4263B2] pb-1">Catálogo</a>
+        <a href="novedades.html" class="hover:text-[#4263B2] transition-colors">Novedades</a>
+        <a href="soporte.html" class="hover:text-[#4263B2] transition-colors">Soporte</a>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="carrito.html" aria-label="Carrito" class="relative text-black hover:text-[#4263B2] transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-[#4263B2] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="w-full flex-grow">
+      <!-- Cabecera del Catálogo -->
+      <div class="px-12 md:px-24 pt-12 pb-10 bg-white">
+        <h2 class="text-[17px] font-medium text-gray-900">Galaxy Smartphones</h2>
+        <p class="text-[15px] text-gray-500 mt-1">Explora la innovación tecnológica en tus manos.</p>
+      </div>
+
+      <!-- Cuadrícula de Productos -->
+      <div class="bg-[#F5F5F5] px-12 md:px-24 py-16">
+        <div class="categorias grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-12">
+
+          <!-- Producto 1: S24 Ultra -->
+          <a href="model1.html" data-precio="4295000" data-producto="Celular S24 Ultra" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="w-full h-72 flex items-center justify-center bg-transparent mb-6">
+                <img src="img/Galaxy S24 Ultra.png" alt="Galaxy S24 Ultra" class="h-full object-contain">
+              </div>
+              <h3 class="text-xl font-medium text-gray-900">Galaxy S24 Ultra</h3>
+              <p class="text-sm text-gray-500 mt-2">Titanium Gray | 256GB</p>
+              <p class="text-lg font-medium text-gray-900 mt-5">4.295.000</p>
+            </div>
+          </a>
+
+          <!-- Producto 2: Z Fold5 -->
+          <a href="model2.html" data-precio="12000000" data-producto="Celular Z Fold5" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="w-full h-72 flex items-center justify-center bg-transparent mb-6">
+                <img src="img/Galaxy Z Fold5.png" alt="Galaxy Z Fold5" class="h-full object-contain">
+              </div>
+              <h3 class="text-xl font-medium text-gray-900">Galaxy Z Fold5</h3>
+              <p class="text-sm text-gray-500 mt-2">Phantom Black | 512GB</p>
+              <p class="text-lg font-medium text-gray-900 mt-5">12.000.000</p>
+            </div>
+          </a>
+
+          <!-- Producto 3: Z Flip5 -->
+          <a href="model3.html" data-precio="7462000" data-producto="Celular Z Flip 5" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="w-full h-72 flex items-center justify-center bg-transparent mb-6">
+                <img src="img/Galaxy Z Flip5.png" alt="Galaxy Z Flip5" class="h-full object-contain">
+              </div>
+              <h3 class="text-xl font-medium text-gray-900">Galaxy Z Flip5</h3>
+              <p class="text-sm text-gray-500 mt-2">Mint | 256GB</p>
+              <p class="text-lg font-medium text-gray-900 mt-5">7.462.000</p>
+            </div>
+          </a>
+
+          <!-- Producto 4: S24 -->
+          <a href="model4.html" data-precio="5115000" data-producto="Celular S24" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="w-full h-72 flex items-center justify-center bg-transparent mb-6">
+                <img src="img/Galaxy S24.png" alt="Galaxy S24" class="h-full object-contain">
+              </div>
+              <h3 class="text-xl font-medium text-gray-900">Galaxy S24</h3>
+              <p class="text-sm text-gray-500 mt-2">Cobalt Violet | 128GB</p>
+              <p class="text-lg font-medium text-gray-900 mt-5">5.115.000</p>
+            </div>
+          </a>
+
+          <!-- Producto 5: A54 5G -->
+          <a href="model5.html" data-precio="5150000" data-producto="Celular A54 5G" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="w-full h-72 flex items-center justify-center bg-transparent mb-6">
+                <img src="img/Galaxy A54.png" alt="Galaxy A54 5G" class="h-full object-contain">
+              </div>
+              <h3 class="text-xl font-medium text-gray-900">Galaxy A54 5G</h3>
+              <p class="text-sm text-gray-500 mt-2">Awesome Graphite | 128GB</p>
+              <p class="text-lg font-medium text-gray-900 mt-5">5.150.000</p>
+            </div>
+          </a>
+
+          <!-- Producto 6: S23 FE -->
+          <a href="model6.html" data-precio="4300000" data-producto="Celular S23 FE" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="w-full h-72 flex items-center justify-center bg-transparent mb-6">
+                <img src="img/Galaxy S23 FE.png" alt="Galaxy S23 FE" class="h-full object-contain">
+              </div>
+              <h3 class="text-xl font-medium text-gray-900">Galaxy S23 FE</h3>
+              <p class="text-sm text-gray-500 mt-2">Cream | 256GB</p>
+              <p class="text-lg font-medium text-gray-900 mt-5">4.300.000</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Pie de página Samsung -->
+      <div class="px-12 md:px-24 py-20 bg-white">
+        <h2 class="text-[17px] font-bold text-gray-900 uppercase">Samsung</h2>
+        <p class="text-[14px] text-gray-500 mt-1">Tecnología diseñada para el futuro.</p>
+      </div>
+    </main>
+
+  </div>
+</body>
+
+</html>

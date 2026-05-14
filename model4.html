@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy S24 - CELLPOINT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./agregarCarrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F5F5F5] text-[#0F172A] p-0 md:p-1 min-h-screen flex flex-col items-center">
+
+    <!-- Contenedor Principal (Boxed Layout) -->
+    <div class="w-full max-w-[1280px] bg-white shadow-2xl overflow-hidden flex flex-col">
+
+        <!-- Navbar -->
+        <nav class="w-full h-20 px-4 md:px-12 flex items-center justify-between bg-white sticky top-0 z-50">
+            <div class="text-2xl font-bold font-space tracking-tighter text-black">CELLPOINT</div>
+
+            <div class="hidden md:flex items-center gap-10 text-base font-medium font-space text-[#475569]">
+                <a href="index.html" class="hover:text-[#4263B2] transition-colors">Inicio</a>
+                <a href="catalogo.html" class="text-[#4263B2] border-b-2 border-[#4263B2] pb-1">Catálogo</a>
+                <a href="novedades.html" class="hover:text-[#4263B2] transition-colors">Novedades</a>
+                <a href="soporte.html" class="hover:text-[#4263B2] transition-colors">Soporte</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button aria-label="Carrito" class="relative hover:text-[#4263B2] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M3 6h18" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-[#4263B2] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
+                </button>
+            </div>
+        </nav>
+
+        <main class="w-full p-4 md:p-10 bg-[#F5F5F5]">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- Columna Izquierda: Detalle del Producto -->
+                <div
+                    class="lg:col-span-2 bg-white rounded-sm p-8 md:p-12 shadow-sm flex flex-col md:flex-row items-center gap-12 h-full">
+                    <div class="w-full md:w-3/5 flex justify-center">
+                        <img src="img/Galaxy S24.png" class="h-[550px] object-contain drop-shadow-2xl" alt="Galaxy S24">
+                    </div>
+                    <div class="flex-1 space-y-5">
+                        <span
+                            class="inline-block bg-[#4263B2] text-white text-[10px] font-bold px-3 py-1 rounded-sm tracking-wider uppercase">S
+                            SERIES</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">Galaxy S24</h2>
+                        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+                            La inteligencia artificial llega al modelo más compacto. Con una pantalla Dynamic AMOLED 2X de 6.2 pulgadas y un diseño refinado en aluminio, el Galaxy S24 combina portabilidad extrema con todo el poder de Galaxy AI.
+                        </p>
+                        <div class="pt-2">
+                            <p class="text-2xl font-bold text-gray-900 mb-6">5.115.000 GS.</p>
+                            <button
+                                data-producto="Galaxy S24" data-precio="5115000" class="btn-agregar bg-[#0f172a] text-white text-xs font-bold w-full py-5 rounded-sm hover:bg-black transition-all uppercase tracking-widest flex items-center justify-center gap-3 group">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="group-hover:scale-110 transition-transform">
+                                    <circle cx="8" cy="21" r="1" />
+                                    <circle cx="19" cy="21" r="1" />
+                                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                </svg>
+                                <span>Añadir al carrito</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Sidebar -->
+                <div class="h-full">
+                    <!-- Card Características Destacadas -->
+                    <div class="bg-white p-7 rounded-sm border border-gray-100 space-y-5 shadow-sm h-full">
+                        <div class="flex justify-between items-center text-[11px] font-bold tracking-tight">
+                            <span class="text-[#4263B2] uppercase">DESTACADO</span>
+                            <span class="text-gray-400 font-medium">S24 SERIES</span>
+                        </div>
+                        <h3 class="text-xl font-bold leading-snug">Tecnología de Vanguardia</h3>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="relative rounded-sm overflow-hidden aspect-square shadow-inner bg-gray-100">
+                                <img src="img/s24simple.jpg" class="w-full h-full object-cover"
+                                    alt="Diseño Sostenible">
+                                <span
+                                    class="absolute bottom-2 left-2 bg-black/70 text-white text-[8px] font-bold px-2 py-0.5 rounded-sm uppercase backdrop-blur-sm">ALUMINIO</span>
+                            </div>
+                            <div class="relative rounded-sm overflow-hidden aspect-square shadow-inner bg-gray-100">
+                                <img src="img/s24sim.jfif" class="w-full h-full object-cover scale-x-[-1]"
+                                    alt="50MP Sensor">
+                                <span
+                                    class="absolute bottom-2 left-2 bg-black/70 text-white text-[8px] font-bold px-2 py-0.5 rounded-sm uppercase backdrop-blur-sm">50MP SENSOR</span>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-gray-500 leading-relaxed">
+                            Experimenta un diseño simétrico con bordes reducidos y la potencia del nuevo procesador para jugar y trabajar sin límites. Incluye Circle to Search y Live Translate.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer
+            class="w-full px-4 md:px-10 py-10 flex items-center justify-between text-gray-400 text-sm font-space border-t border-gray-100 bg-white">
+            <p class="font-medium text-[13px]">© 2026 . Todos los derechos reservados.</p>
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="opacity-40">
+                    <circle cx="10" cy="10" r="8" />
+                    <path d="M10 2a14.5 14.5 0 0 0 0 16" />
+                    <path d="M2 10h16" />
+                </svg>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
